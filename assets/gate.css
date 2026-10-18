@@ -1,0 +1,14 @@
+html[data-locked="true"] body > *:not(#gate) { display: none !important; }
+html[data-locked="true"] body { background: #1B2A4A; display: block; height: auto; overflow: auto; }
+#gate { position: fixed; inset: 0; overflow-y: auto; display: flex; align-items: center; justify-content: center; padding: 1.5rem; background: #1B2A4A; color: #fff; z-index: 99999; font-family: "Montserrat", system-ui, sans-serif; font-size: 1.0625rem; line-height: 1.5; }
+#gate form { width: 100%; max-width: 26rem; margin: auto; display: flex; flex-direction: column; gap: .875rem; text-align: center; }
+#gate img { align-self: center; max-width: 100%; height: auto; margin-bottom: .5rem; }
+#gate h1 { font-size: 1.625rem; line-height: 1.2; margin: 0; color: #fff; }
+#gate p { margin: 0; color: #E8EEF8; font-size: 1.125rem; }
+#gate label { text-align: left; font-size: 1.125rem; font-weight: 700; color: #fff; }
+#gate input { font: inherit; font-size: 1.25rem; min-height: 3.25rem; padding: .75rem 1rem; border-radius: .75rem; border: 2px solid #A9D2FF; background: #0F1B33; color: #fff; }
+#gate input:focus-visible, #gate button:focus-visible { outline: .1875rem solid #fff; outline-offset: .1875rem; }
+#gate button { font: inherit; font-size: 1.1875rem; min-height: 3.25rem; padding: .75rem 1rem; border-radius: .75rem; border: 2px solid #fff; background: #A9D2FF; color: #0B1630; font-weight: 700; cursor: pointer; }
+#gate button:hover { background: #fff; }
+#gate #gate-err { color: #FFC9BF; font-weight: 700; }
+html[data-locked="true"] body > noscript { display: block !important; padding: 1.5rem; color: #fff; }

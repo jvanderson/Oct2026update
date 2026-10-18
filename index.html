@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-locked="true">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#1B2A4A">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Beacon · Investor Update 3Q26 · Confidential</title>
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/gate.css">
+<!-- Card 0: password screen. All content is encrypted in assets/payload.js (see README.txt) -->
+</head>
+<body>
+<header class="appbar">
+  <img class="logo" src="assets/logo.png" alt="Beacon" width="1549" height="712">
+  <span class="tag" id="tag"></span>
+</header>
+
+<!-- Cards are built from assets/content.js. Swipe left/right (or use the arrows) to change card. -->
+<main id="deck" class="deck" aria-label="Investor update cards"></main>
+
+<!-- Page indicator: previous / dots + card name / next -->
+<nav id="pager" class="pager" aria-label="Card navigation">
+  <button id="prev" class="navbtn" type="button" aria-label="Previous card">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 4 7 12l8 8"/></svg><span class="navtxt">Prev</span>
+  </button>
+  <div class="pager-mid">
+    <div id="dots" class="dots"></div>
+    <p id="pager-label" class="pager-label" aria-live="polite"></p>
+    <p id="swipe-hint" class="swipe-hint"><span aria-hidden="true">&#8249;</span> Swipe left or right <span aria-hidden="true">&#8250;</span></p>
+  </div>
+  <button id="next" class="navbtn" type="button" aria-label="Next card">
+    <span class="navtxt">Next</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 4 8 8-8 8"/></svg>
+  </button>
+</nav>
+
+<!-- The one and only popup (modal) -->
+<div id="overlay" class="overlay" hidden>
+  <div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+    <button id="close" class="close" type="button" aria-label="Close">&times;</button>
+    <p id="sheet-kicker" class="kicker"></p>
+    <h2 id="sheet-title" class="sheet-title"></h2>
+    <div id="sheet-body" class="sheet-body"></div>
+  </div>
+</div>
+
+<noscript><p class="noscript">This update needs JavaScript enabled.</p></noscript>
+<script src="assets/payload.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/gate.js"></script>
+</body>
+</html>
