@@ -129,17 +129,18 @@ window.BeaconApp = { start: function (U, M, PHOTOS) {
       b.type = "button";
       b.setAttribute("aria-haspopup", "dialog");
       b.setAttribute("data-tile", t.id);
-      b.appendChild(el("span", "num " + t.color, t.num));
-      var lab = el("span", "lab");
-      lab.appendChild(el("b", null, t.label));
-      if (t.sublabel) { lab.appendChild(document.createElement("br")); lab.appendChild(document.createTextNode(t.sublabel)); }
-      b.appendChild(lab);
+      // line 1: big number + bold label side by side (wraps gracefully when long); line 2: the sublabel
+      var head = el("span", "thead");
+      head.appendChild(el("span", "num " + t.color, t.num));
+      head.appendChild(el("b", "tlab", t.label));
+      b.appendChild(head);
+      if (t.sublabel) b.appendChild(el("span", "tsub", t.sublabel));
       b.appendChild(el("span", "chev"));
       b.addEventListener("click", function () { openItem(t.id, true, b); });
       tiles.appendChild(b);
     });
     sec._inner.appendChild(tiles);
-    sec._inner.appendChild(el("p", "hint", "Tap any box for detail"));
+    sec._inner.appendChild(el("p", "hint hint-stats", "Tap any box for detail"));
     addFooter(sec);
     return sec;
   }
@@ -542,6 +543,7 @@ window.BeaconApp = { start: function (U, M, PHOTOS) {
   if (startCard === 0 && !reduced && n > 1) panels[0].querySelector(".inner").classList.add("nudge");
   if (startCard !== 0) { hintHidden = false; }
   ready = true;
+  window.setTimeout(hideHint, 7000);   // the swipe hint floats above the pager and fades by itself
   sizeDotHits();
   if (startItem) openItem(startItem, false);
 } };
